@@ -15,10 +15,13 @@
     <header>
         <h1 class="text-5xl text-center my-8">This is JS Calculator</h1>
     </header>
-    <section class="w-1/3 mx-auto border-4">
+    <section class="md:w-1/2 lg:w-1/3 mx-auto border-4">
         <div class="grid grid-cols-1">
             <div class="bg-gray-800 h-16 text-white pt-2 px-6">
-                <h2 id="cal-display" class="text-5xl text-right">00</h2>
+                <div class="grid grid-cols-2">
+                    <div id="cal-displayDigit" class="text-3xl"></div>
+                    <div id="cal-display" class="text-5xl text-right">0</div>
+                </div>
             </div>
             <div id="calculator-buttons" class="bg-purple-300 py-6">
                 <div class="grid grid-cols-4 gap-4 gap-x-0 px-4 text-xl">

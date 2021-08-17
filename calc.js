@@ -3,6 +3,12 @@ function previousAmount() {
     const amount = parseFloat(displayField.innerText)
     return amount;
 }
+function digitDisplay(num) {
+    const digitField = document.getElementById('cal-displayDigit');
+    let prevNum = digitField.innerText;
+    let newNum = prevNum + String(num);
+    digitField.innerText = newNum;
+}
 function displayAmount(num) {
     const displayField = document.getElementById('cal-display');
     displayField.innerText = num;
@@ -44,8 +50,11 @@ document.getElementById('calculator-buttons').addEventListener('click', function
 
     if (clickedValueConverted >= 0 && clickedValueConverted <= 9 || clickedValueConverted == '.') {
         numArray.push(clickedValueConverted);
+        digitDisplay(clickedValueConverted);
+
     }
     else if (typeof clickedValue == 'string') {
+        document.getElementById('cal-displayDigit').innerText = '';
         //console.log(numArray, clickedValue);
         let num = arrayToNum(numArray);
         numArray = [];
